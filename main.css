@@ -1,5 +1,5 @@
 *{
-   font-family: 'Arial Black';
+   font-family: 'Arial Black','Kosugi Maru','Ubuntu','Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic' ;;
     letter-spacing: 1px;
 }
 
@@ -26,6 +26,7 @@ main{
     animation: main_border_in 1.5s ease 4.0s forwards;
     border-top: solid 2px blue;
     border-bottom: solid 2px blue;
+    visibility: hidden;
 }
 
 .main_border2{
@@ -374,8 +375,15 @@ main{
     100%{transform: translate(0); opacity: 0.8;}
 }
 
-@supports (-ms-ime-align:auto) {
+/*@supports (-ms-ime-align:auto) {
   .main_border,.main_border2{
     visibility: hidden;
   }
+}*/
+
+/* chrome opera */
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm) {
+    .main_border,.main_border2{
+        visibility: visible;
+    }
 }
