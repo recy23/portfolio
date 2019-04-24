@@ -1,0 +1,381 @@
+*{
+   font-family: 'Arial Black';
+    letter-spacing: 1px;
+}
+
+body{
+    background: linear-gradient(to top,lightgreen 0%,white 100%);
+}
+
+main{
+    position: relative;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.main_border,.main_border2{
+    position: relative;
+    display: block;
+    margin-top: 5vh; height: 7vh;
+    background-color: white;
+    background-image: linear-gradient(45deg, rgba(17,120,75,.8) 25%, transparent 25%,transparent 75%, rgba(17,120,75,.8) 75%),linear-gradient(-45deg, rgb(17,120,75,.8) 25%,transparent 25%, transparent 75%,rgb(17,120,75,.8) 75%);
+    
+    background-size: 7vh;
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: main_border_in 1.5s ease 4.0s forwards;
+    border-top: solid 2px blue;
+    border-bottom: solid 2px blue;
+}
+
+.main_border2{
+    margin-top: 0vh;
+    margin-bottom: 5vh;
+    transform: translateX(100%);
+    animation: main_border_in 1s ease 4.0s forwards;
+}
+
+.profile{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    opacity: 0;
+    height: 74vh;
+    animation: fade_in 1s ease 4.5s forwards;
+}
+
+.recychan{
+    margin-top: 20%; 
+    height: 180px; 
+    border: solid 3px green; 
+    transform: scale(0);
+    border-radius: 15px;
+    animation: scale_xy 1s cubic-bezier(0.55, -0.01, 0.35, 1.5) 4.3s forwards;
+}
+
+.profile p{
+    position: relative; margin-top: 3%; margin-bottom: 3%;
+    font-size: 24px;
+    color: rgb(15,68,50);
+}
+
+.portfolio{
+    display: inline-block;
+    width: 50%; 
+    vertical-align: top;
+    padding-top: 1%;
+    opacity: 0;
+    animation: fade_in 1s ease 4.5s forwards;
+}
+
+.portfolio p{
+    color: rgb(15,68,50);
+    font-size: 18px;
+}
+
+.works{
+    width: 90%; 
+    margin: 5%;
+}
+
+.title::after{
+    content: "";
+    position: relative; left: 5px; top: 2px;
+    display: inline-block;
+    border-style: solid;
+    border-color: green transparent transparent transparent;
+    border-width: 13.8px 8px 0 8px;
+    transition-duration: 1s;
+    transform-origin: 8px 5px;
+}
+
+.title{
+    transition-duration: 1s;
+}
+
+.title:hover{
+    filter: brightness(10%);
+}
+
+.title:hover::after{
+    transform: rotate(180deg);
+}
+
+.contents{
+    background: rgba(255,255,255,.8); 
+    border: solid 3px green;
+    margin: 2%; padding: 3%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contents p:first-child{
+    font-size: 24px;
+}
+
+.contents img{
+    width: 80%;
+}
+
+.twitter{
+    height: 48px; width: 48px;
+    margin: auto;
+    border-radius: 48px;
+    background-color: rgb(29,161,242);
+    overflow: hidden;
+    transition-duration: 1s;
+    border: solid 1px blue;
+}
+
+.twitter_icon{
+    height: 100%;
+    border-radius: 50%;
+    float: left;
+}
+
+.twitter:hover{
+    width: 200px;
+}
+
+.twitter a{
+    position: relative;
+    top: 20%;
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    transition-delay: .5s;
+}
+
+.op{
+    animation: out_screen 1.5s ease 3.5s forwards;
+}
+
+.op_clover {
+    opacity: .7;
+    transform-origin: 25px 41px;
+}
+
+.op_name::before{
+    content: "";
+    position: fixed;
+    top: calc(50% - 45px); left: calc(50% - 200px);
+    width: 300px; height: 60px;
+    border-bottom: solid 2px green;
+    border-radius: 50%;
+    transform-origin: left;
+    transform: scaleX(0) rotate(0deg);
+    animation: scale_x_1 1.2s ease 1.5s forwards;
+}
+
+.op_name::after{
+    content: "";
+    position: fixed;
+    top: calc(50% - 45px); left: calc(50% - 100px);
+    width: 300px; height: 60px;
+    border-top: solid 2px green;
+    border-radius: 50%;
+    transform-origin: right;
+    transform: scaleX(0) rotate(0deg);
+    animation: scale_x_1 1.2s ease 1.5s forwards;
+}
+
+.op_name h1{
+    position: fixed;
+    top: calc(50% - 40px); left: calc(50% - 150px);
+    width: 300px; height: 60px;
+    color: rgb(27,100,78);
+    text-align: center;
+    opacity: 0; 
+    font-size: 32px;
+    animation: fade_in 1s ease 1.5s forwards;
+}
+
+.op_clover:before,.op_clover:after {
+    position: fixed;
+    content: "";
+    left: 25px;  top: 0;
+    width: 25px;  height: 40px;
+    background-color: rgb(29,132,70);
+    border-radius: 25px 25px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.op_clover:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.cloverLeft{
+    position: fixed; 
+    left: calc(50% - 25px); top: calc(50% - 50px);
+    width: 200px;
+    transform-origin: right;
+    animation: cloverLeft 1.2s ease .3s forwards;
+}
+
+.cloverRight{
+    position: fixed; 
+    left: calc(50% - 25px); top: calc(50% - 50px);
+    width: 200px;
+    transform-origin: left;
+    animation: cloverRight 1.2s ease .3s forwards;
+}
+
+.clover_left1{
+    animation: clover_open1 1.5s ease .3s forwards;
+}
+
+.clover_left2{
+    animation: clover_open2 1.5s ease .3s forwards;
+}
+
+.clover_left3{
+   animation: clover_open3 1.5s ease .3s forwards;
+}
+
+.clover_right1{
+    animation: clover_open4 1.5s ease .3s forwards;
+}
+
+.clover_right2{
+    animation: clover_open5 1.5s ease .3s forwards;
+}
+
+.clover_right3{
+   animation: clover_open6 1.5s ease .3s forwards;
+}
+
+.clover_right4{
+    animation: clover_open7 1.5s ease .3s forwards;
+}
+
+
+
+@media screen and (max-width: 800px){
+    .op_name::before{
+        left: calc(50% - 150px);
+        width: 200px; 
+        border-bottom: solid 1px green;
+    }
+
+    .op_name::after{
+        left: calc(50% - 50px);     top: calc(50% - 35px);
+        width: 200px; 
+        border-top: solid 1px green;
+    }
+
+    .op_name h1{
+        top: calc(50% - 25px); left: calc(50% - 150px);
+        width: 300px; height: 60px;
+        font-size: 24px;
+    }
+
+    .op_clover:before,.op_clover:after {
+        left: 12px;
+        width: 12px;  height: 20px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .op_clover:after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+    }
+
+    .cloverLeft{
+        left: calc(50% - 5px); top: calc(50% - 25px);
+        width: 150px;
+    }
+
+    .cloverRight{
+        left: calc(50% - 5px); top: calc(50% - 25px);
+        width: 150px;
+    }
+
+    .op_clover {
+        transform-origin: 12px 21px;
+    }
+    
+    .profile{
+        width: 100vw;
+        min-height: 0;
+    }
+    
+    .recyvhan{
+        height: 150px;
+    }
+    
+    .portfolio{
+        width: 100vw;
+    }
+    
+    .portfolio p{
+        padding-left: 5%;
+    }
+
+}
+
+@keyframes out_screen{
+    99%{opacity: 0;}
+    100%{opacity: 0; visibility: hidden;}
+}
+
+@keyframes fade_in{
+    100%{opacity: 1;}
+}
+
+@keyframes scale_x_1{
+    100%{transform: scaleX(1) rotate(5deg);}
+}
+
+@keyframes scale_xy{
+    100%{transform: scale(1);}
+}
+
+@keyframes cloverLeft{
+    100%{transform: translateX(-100%);}
+}
+
+@keyframes cloverRight{
+    100%{transform: translateX(100%);}
+}
+
+@keyframes clover_open1{
+    100%{transform: rotate(95deg);}
+}
+
+@keyframes clover_open2{
+    100%{transform: rotate(190deg);}
+}
+
+@keyframes clover_open3{
+    100%{transform: rotate(300deg);}
+}
+
+@keyframes clover_open4{
+    100%{transform: rotate(-110deg);}
+}
+
+@keyframes clover_open5{
+    100%{transform: rotate(-210deg);}
+}
+
+@keyframes clover_open6{
+    100%{transform: rotate(-270deg);}
+}
+
+@keyframes clover_open7{
+    100%{transform: rotate(-15deg);}
+}
+
+@keyframes main_border_in{
+    100%{transform: translate(0); opacity: 0.8;}
+}
+
+@supports (-ms-ime-align:auto) {
+  .main_border,.main_border2{
+    visibility: hidden;
+  }
+}
